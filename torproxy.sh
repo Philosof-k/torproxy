@@ -2,6 +2,8 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+[[ "${USERID:-""}" =~ ^[0-9]+$ ]] && usermod -u $USERID -o tor
+[[ "${GROUPID:-""}" =~ ^[0-9]+$ ]] && groupmod -g $GROUPID -o tor
 
 chown -Rh tor. /etc/tor /var/lib/tor /var/log/tor 2>&1 |
             grep -iv 'Read-only' || :
