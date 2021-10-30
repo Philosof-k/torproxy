@@ -1,6 +1,4 @@
 FROM alpine
-LABEL maintainer="philosof"
-FROM alpine
 MAINTAINER philosof
 
 # Install tor and privoxy
